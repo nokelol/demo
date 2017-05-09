@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            width:100%;
+            height:3000px;
+            overflow:hidden;
+            margin: 0;
+            padding: 0;
+            background-color: orange;
+            min-width:800px;
+        }
+        .container {
+            transform-style:preserve-3d;
+            
+            transform:rotateZ(37deg)rotateY(-26deg)rotateX(25deg);
+            width:500px;
+            height:2200px;
+            transition:all 1s;
+        }
+        ul{
+            margin-left:100px;
+            margin-top:-150px;
+            list-style:none;
+            width:500px;
+            background-color: #fff;
+            height:2200px;
+            padding: 0px;
+            /*transform:rotateZ(52deg)rotateY(-26deg);*/
+            transform-style:preserve-3d;
+            transition:all 1s;
+
+        }
+        ul>li {
+            width:45%;
+            height: 200px;
+            box-shadow:0px 0px 0px 100px #aaa inset,0px 0px 0px 0px #aaa ;
+            margin:10px 10px;
+            float:left;
+            box-sizing:border-box;
+            transform-style:preserve-3d;
+            position:relative;
+            perspective: 800px;
+            -webkit-perspective-origin: 50% 50%;
+            transition:all 1s;
+        }
+        ul>li:hover {
+            box-shadow:0px 0px 0px 100px #eee inset,0px 0px 0px 10px #eee ;
+        }
+        li .first,li .second,li .third {
+            width: 100%;
+            height: 100%;
+            transition:all 1s;
+            position:absolute;
+            left:0px;
+            top:0px;
+            transform:translateZ(0px);
+
+        }
+        li img {
+            width: 100%;
+            height: 100%;
+        }
+        li .first {
+            background-color: red;
+        }
+        li:hover .first {
+            background-color: red;
+            transform:translateZ(30px);
+        }
+        li:hover .third {
+            transform:translateZ(100px);
+            /*transform:translateX(180px);*/
+        }
+        li .second{
+            background-color: green;
+
+        }
+        li:hover .second{
+            background-color: green;
+            transform:translateZ(60px);
+            /*transform:translateY(80px);*/
+        }
+        li .third{
+            background-color: blue;
+            /*box-shadow:0px 0px 0px 5px #eeeeee;*/
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var ul=document.getElementsByClassName("box")[0];
+            var i=0;
+            var flag=true;
+            var imgs=ul.getElementsByTagName("img");
+
+
+            for(var j=0;j<imgs.length;j++){
+                var k=Math.random()*7;
+                k=Math.floor(k);
+                imgs[j].src="images/"+k+".jpg";
+            }
+            window.onresize=function(){
+                document.body.style.width="100%";
+                document.body.style.height="100%";
+            }
+            window.onmousewheel=function(){
+                if(flag){
+                    flag=false;
+                    if(event.wheelDelta<0){
+                        if(i<5){
+                            i++;
+                            ul.style.transform="translateY("+(-1*i*400)+"px)";
+                        }
+                        console.log(i);
+                    }else{
+                        if(i>0){
+                            i--;
+                            ul.style.transform="translateY("+(-1*i*400)+"px)";
+                        }
+
+                    }
+                }
+            }
+            ul.addEventListener("webkitTransitionEnd",function(){
+                flag=true;
+            })
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <ul class="box">
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+        <li>
+            <div class="first"><img src="" /></div>
+            <div class="second"><img src="" /></div>
+            <div class="third"><img src="" /></div>
+        </li>
+
+
+    </ul>
+</div>
+</body>
+</html>
